@@ -10,12 +10,8 @@ env:
 
 jobs:
   tests:
-    name: Tests on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-18.04, macos-latest, windows-latest]
+    name: Tests
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Cache dependencies
@@ -33,7 +29,7 @@ jobs:
 
   clippy:
     name: Run Clippy
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions-rs/toolchain@v1
@@ -52,7 +48,7 @@ jobs:
 
   fmt:
     name: Run Rustfmt
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions-rs/toolchain@v1
