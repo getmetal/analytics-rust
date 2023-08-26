@@ -43,7 +43,7 @@ impl Client for HttpClient {
         let _ = self
             .client
             .post(&format!("{}{}", self.host, path))
-            .header("Authorization", format!("Basic: {}", write_key))
+            .header("Authorization", format!("Basic {}", write_key))
             .header("Content-Type", "application/json")
             .json(&msg)
             .send()
