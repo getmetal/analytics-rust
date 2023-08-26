@@ -13,6 +13,8 @@ jobs:
   tests:
     name: Tests
     runs-on: ubuntu-latest
+    env:
+      JUNE_WRITE_KEY: ${{ secrets.JUNE_WRITE_KEY }}
     steps:
     - uses: actions/checkout@v2
     - name: Cache dependencies
