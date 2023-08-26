@@ -4,7 +4,7 @@ description = "June analytics client for Rust"
 edition = "2018"
 license = "MIT"
 name = "june-analytics"
-version = "0.2.1"
+version = "0.2.2"
 readme = "README.md"
 
 [dependencies]
@@ -17,6 +17,7 @@ thiserror = "1.0.29"
 
 [dev-dependencies]
 tokio = { version = "1", features = ["rt", "macros"], default-features = false }
+dotenv = "0.15.0"
 
 [features]
 default = ["rustls-tls"]
